@@ -1,0 +1,26 @@
+{%- extends '!layout.html' %}
+
+{%- block extrahead %}
+  {{ super() }}
+  <style>.docutils.container { font-size: 1rem }</style>
+  <meta name="generator" content="Sphinx {{ sphinx_version }}">
+  {%- set desc="Instructions for installing and patching White Album 2 on wine" %}
+  <meta name="description" content="{{ desc }}">
+  <meta name="og:description" content="{{ desc }}">
+  <meta name="twitter:description" content="{{ desc }}">
+  {%- set logo="https://todokanaitl.github.io/res/images/logo.png" %}
+  <meta name="og:image" content="{{ logo }}">
+  <meta name="twitter:image" content="{{ logo }}">
+  <meta name="og:title" content="{{ title }}">
+  <meta name="twitter:title" content="{{ title }}">
+{%- endblock %}
+
+{%- block footer %}
+  <div class="footer" role="contentinfo">
+    &copy; {{ copyright }}, Unlicense |
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> v{{ sphinx_version }} |
+    Fork me on <a href="https://github.com/TodokanaiTL/wa2-wine">GitHub</a>
+  </div>
+{%- endblock %}
+
+{# vim:set ft=jinja: #}

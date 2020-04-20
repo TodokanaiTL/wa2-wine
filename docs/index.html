@@ -1,0 +1,696 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WA2 on wine</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx_tabs/tabs.css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+    <script src="_static/sphinx_tabs/tabs.js"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  <style>.docutils.container { font-size: 1rem }</style>
+  <meta name="generator" content="Sphinx 3.0.2">
+  <meta name="description" content="Instructions for installing and patching White Album 2 on wine">
+  <meta name="og:description" content="Instructions for installing and patching White Album 2 on wine">
+  <meta name="twitter:description" content="Instructions for installing and patching White Album 2 on wine">
+  <meta name="og:image" content="https://todokanaitl.github.io/res/images/logo.png">
+  <meta name="twitter:image" content="https://todokanaitl.github.io/res/images/logo.png">
+  <meta name="og:title" content="WA2 on wine">
+  <meta name="twitter:title" content="WA2 on wine">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="#">WA2 on wine</a> &#187;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="install-patch-white-album-2-on-wine">
+<h1>Install &amp; patch White Album 2 on wine<a class="headerlink" href="#install-patch-white-album-2-on-wine" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<span id="document-japanese-support"></span><div class="section" id="enable-japanese-support">
+<h2>Enable Japanese support<a class="headerlink" href="#enable-japanese-support" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-VWJ1bnR1 docutils container">
+<div class="docutils container">
+<p>Ubuntu</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-QXJjaA== docutils container">
+<div class="docutils container">
+<p>Arch</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-RmVkb3Jh docutils container">
+<div class="docutils container">
+<p>Fedora</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-TWFjT1M= docutils container">
+<div class="docutils container">
+<p>MacOS</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-VWJ1bnR1 active docutils container">
+<p>Check whether it’s already enabled:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>locale -a <span class="p">|</span> grep ja
+</pre></div>
+</div>
+<p>If you see something like this, you can proceed to the next step.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ja_JP
+ja_JP.eucjp
+ja_JP.ujis
+ja_JP.utf8
+japanese
+japanese.euc
+</pre></div>
+</div>
+<p>If not, generate the locale and install some fonts:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo locale-gen ja_JP.<span class="o">{</span>UTF-8,EUC-JP<span class="o">}</span>
+sudo apt install -y fonts-<span class="o">{</span>takao,mona,monapo<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-QXJjaA== docutils container">
+<p>Check whether it’s already enabled:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>locale -a <span class="p">|</span> grep ja
+</pre></div>
+</div>
+<p>If you see something like this, you can proceed to the next step.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ja_JP
+ja_JP.eucjp
+ja_JP.ujis
+ja_JP.utf8
+japanese
+japanese.euc
+</pre></div>
+</div>
+<p>If not, generate the locale and install some fonts:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo locale-gen ja_JP.<span class="o">{</span>UTF-8,EUC-JP<span class="o">}</span>
+sudo pacman -S otf-ipafont ttf-hanazono
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-RmVkb3Jh docutils container">
+<p>Check whether it’s already enabled:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>locale -a <span class="p">|</span> grep ja
+</pre></div>
+</div>
+<p>If you see something like this, you can proceed to the next step.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ja_JP
+ja_JP.eucjp
+ja_JP.ujis
+ja_JP.utf8
+japanese
+japanese.euc
+</pre></div>
+</div>
+<p>If not, install the locale and fonts:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf groupinstall -y <span class="s1">&#39;Japanese Support&#39;</span>
+sudo dnf install -y hanazono-fonts mona-*-fonts
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWFjT1M= docutils container">
+<div class="line-block">
+<div class="line">Japanese locale should be enabled by default on Mac.</div>
+<div class="line">You can check by running this command:</div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>locale -a <span class="p">|</span> grep ja
+</pre></div>
+</div>
+<p>Which should return something like this:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ja_JP
+ja_JP.eucJP
+ja_JP.SJIS
+ja_JP.UTF-8
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Japanese fonts should also be preinstalled but,
+alas, they don’t seem to work 100% in wine.</div>
+<div class="line">You could, however, install more fonts in
+hopes of getting one to work properly.</div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-install-wine"></span><div class="section" id="install-wine-and-winetricks">
+<h2>Install wine and winetricks<a class="headerlink" href="#install-wine-and-winetricks" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-VWJ1bnR1 docutils container">
+<div class="docutils container">
+<p>Ubuntu</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-QXJjaA== docutils container">
+<div class="docutils container">
+<p>Arch</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-RmVkb3Jh docutils container">
+<div class="docutils container">
+<p>Fedora</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-TWFjT1M= docutils container">
+<div class="docutils container">
+<p>MacOS</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-VWJ1bnR1 active docutils container">
+<p>Install <code class="docutils literal notranslate"><span class="pre">wine</span></code> following the <a class="reference external" href="https://wiki.winehq.org/Ubuntu">official instructions for Ubuntu</a>.</p>
+<p>Get the latest version of <code class="docutils literal notranslate"><span class="pre">winetricks</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -O https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks <span class="o">&amp;&amp;</span> sudo mv winetricks /usr/local/bin
+</pre></div>
+</div>
+<p>You might also need to install <code class="docutils literal notranslate"><span class="pre">cabextract</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt install -y cabextract
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-QXJjaA== docutils container">
+<p>Install <code class="docutils literal notranslate"><span class="pre">wine</span></code> following the <a class="reference external" href="https://wiki.archlinux.org/index.php/Wine#Installation">instructions on the Arch wiki</a>.</p>
+<p>Get the latest version of <code class="docutils literal notranslate"><span class="pre">winetricks</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -O https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks <span class="o">&amp;&amp;</span> sudo mv winetricks /usr/local/bin
+</pre></div>
+</div>
+<p>You might also need to install <code class="docutils literal notranslate"><span class="pre">cabextract</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo pacman -S cabextract
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-RmVkb3Jh docutils container">
+<p>Install <code class="docutils literal notranslate"><span class="pre">wine</span></code> following the <a class="reference external" href="https://wiki.winehq.org/Fedora">official instructions for Fedora</a>.</p>
+<p>Get the latest version of <code class="docutils literal notranslate"><span class="pre">winetricks</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -O https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks <span class="o">&amp;&amp;</span> sudo mv winetricks /usr/local/bin
+</pre></div>
+</div>
+<p>You might also need to install <code class="docutils literal notranslate"><span class="pre">cabextract</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf install -y cabextract
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWFjT1M= docutils container">
+<p>Install <a class="reference external" href="https://www.xquartz.org/releases/XQuartz-2.7.9.html">XQuartz 2.7.9</a> (newer releases have font issues).</p>
+<p>Download <a class="reference external" href="https://dl.winehq.org/wine-builds/macosx/download.html">wine</a> (any version you want) and run the installer.</p>
+<p>Get the latest version of <code class="docutils literal notranslate"><span class="pre">winetricks</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -O https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks <span class="o">&amp;&amp;</span> sudo mv winetricks /usr/local/bin
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-setup-wineprefix"></span><div class="section" id="create-a-wineprefix-for-the-game">
+<h2>Create a wineprefix for the game<a class="headerlink" href="#create-a-wineprefix-for-the-game" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-VWJ1bnR1 docutils container">
+<div class="docutils container">
+<p>Ubuntu</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-QXJjaA== docutils container">
+<div class="docutils container">
+<p>Arch</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-RmVkb3Jh docutils container">
+<div class="docutils container">
+<p>Fedora</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-TWFjT1M= docutils container">
+<div class="docutils container">
+<p>MacOS</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-VWJ1bnR1 active docutils container">
+<p>Run the following commands to create a wineprefix:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">WINEARCH</span><span class="o">=</span>win32
+<span class="nb">export</span> <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.local/share/wineprefixes/wa2&quot;</span>
+mkdir -p <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> wineboot -u
+</pre></div>
+</div>
+<p>Then, install the requirements:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>winetricks lucida corefonts cjkfonts <span class="c1"># English &amp; Japanese fonts</span>
+winetricks devenum d3dx9 quartz <span class="c1"># the DLLs required by the game</span>
+winetricks wmp9 <span class="c1"># includes the wmv codec used in the cutscenes</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-QXJjaA== docutils container">
+<p>Run the following commands to create a wineprefix:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">WINEARCH</span><span class="o">=</span>win32
+<span class="nb">export</span> <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.local/share/wineprefixes/wa2&quot;</span>
+mkdir -p <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> wineboot -u
+</pre></div>
+</div>
+<p>Then, install the requirements:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>winetricks lucida corefonts cjkfonts <span class="c1"># English &amp; Japanese fonts</span>
+winetricks devenum d3dx9 quartz <span class="c1"># the DLLs required by the game</span>
+winetricks wmp9 <span class="c1"># includes the wmv codec used in the cutscenes</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-RmVkb3Jh docutils container">
+<p>Run the following commands to create a wineprefix:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">WINEARCH</span><span class="o">=</span>win32
+<span class="nb">export</span> <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.local/share/wineprefixes/wa2&quot;</span>
+mkdir -p <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> wineboot -u
+</pre></div>
+</div>
+<p>Then, install the requirements:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>winetricks lucida corefonts cjkfonts <span class="c1"># English &amp; Japanese fonts</span>
+winetricks devenum d3dx9 quartz <span class="c1"># the DLLs required by the game</span>
+winetricks wmp9 <span class="c1"># includes the wmv codec used in the cutscenes</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWFjT1M= docutils container">
+<div class="line-block">
+<div class="line">Run the <code class="docutils literal notranslate"><span class="pre">wine</span></code> application, which will launch a terminal window.</div>
+<div class="line">There, type the following commands to create the wineprefix:</div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">WINEARCH</span><span class="o">=</span>win32
+<span class="nb">export</span> <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.local/share/wineprefixes/wa2&quot;</span>
+mkdir -p <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span> wineboot -u
+</pre></div>
+</div>
+<p>Then, install the requirements:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>winetricks lucida corefonts cjkfonts <span class="c1"># English &amp; Japanese fonts</span>
+winetricks devenum d3dx9 quartz <span class="c1"># the DLLs required by the game</span>
+winetricks wmp9 <span class="c1"># includes the wmv codec used in the cutscenes</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-install-game"></span><div class="section" id="install-the-game">
+<h2>Install the game<a class="headerlink" href="#install-the-game" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-VWJ1bnR1 docutils container">
+<div class="docutils container">
+<p>Ubuntu</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-QXJjaA== docutils container">
+<div class="docutils container">
+<p>Arch</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-RmVkb3Jh docutils container">
+<div class="docutils container">
+<p>Fedora</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-TWFjT1M= docutils container">
+<div class="docutils container">
+<p>MacOS</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-VWJ1bnR1 active docutils container">
+<p>Choose the installation method that applies to you:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-1-0 docutils container">
+<div class="docutils container">
+<p>Folder/Zip</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-1-1 docutils container">
+<div class="docutils container">
+<p>ISO/MDF</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-1-2 docutils container">
+<div class="docutils container">
+<p>CD-ROM</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-1-0 active docutils container">
+<p>If you have the game in a zip file, extract it before proceeding.</p>
+<p>Assuming you have the game folder in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>, copy it to the wineprefix.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">&quot;</span>
+cp -r <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE ALBUM2&quot;</span> <span class="s2">&quot;drive_c/Program Files&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-1-1 docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">.mdf</span></code> files instead of <code class="docutils literal notranslate"><span class="pre">.iso</span></code>,
+rename them to <code class="docutils literal notranslate"><span class="pre">.iso</span></code> before proceeding.</p>
+</div>
+<p>Mount the game disks in <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> (assuming you have them in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p /tmp/disk<span class="o">{</span><span class="m">1</span>..2<span class="o">}</span>
+sudo mount <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_1.iso&quot;</span> /tmp/disk1
+sudo mount <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_2.iso&quot;</span> /tmp/disk2
+</pre></div>
+</div>
+<p>Then, mount them in the wineprefix:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> dosdevices
+ln -s /tmp/disk1 x:
+ln -s /tmp/disk2 y:
+ln -s <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_1.iso&quot;</span> x::
+ln -s <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_2.iso&quot;</span> y::
+</pre></div>
+</div>
+<p>Finally, run the setup:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> x:
+<span class="nv">LANG</span><span class="o">=</span>ja_JP.utf8 wine setup.exe
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-1-2 docutils container">
+<p>Create <code class="docutils literal notranslate"><span class="pre">ISO</span></code> images of the disks and then
+proceed with the steps listed in the <code class="docutils literal notranslate"><span class="pre">ISO/MDF</span></code> tab.</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-QXJjaA== docutils container">
+<p>Choose the installation method that applies to you:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-2-0 docutils container">
+<div class="docutils container">
+<p>Folder/Zip</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-2-1 docutils container">
+<div class="docutils container">
+<p>ISO/MDF</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-2-2 docutils container">
+<div class="docutils container">
+<p>CD-ROM</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-2-0 active docutils container">
+<p>If you have the game in a zip file, extract it before proceeding.</p>
+<p>Assuming you have the game folder in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>, copy it to the wineprefix.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">&quot;</span>
+cp -r <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE ALBUM2&quot;</span> <span class="s2">&quot;drive_c/Program Files&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-2-1 docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">.mdf</span></code> files instead of <code class="docutils literal notranslate"><span class="pre">.iso</span></code>,
+rename them to <code class="docutils literal notranslate"><span class="pre">.iso</span></code> before proceeding.</p>
+</div>
+<p>Mount the game disks in <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> (assuming you have them in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p /tmp/disk<span class="o">{</span><span class="m">1</span>..2<span class="o">}</span>
+sudo mount <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_1.iso&quot;</span> /tmp/disk1
+sudo mount <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_2.iso&quot;</span> /tmp/disk2
+</pre></div>
+</div>
+<p>Then, mount them in the wineprefix:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> dosdevices
+ln -s /tmp/disk1 x:
+ln -s /tmp/disk2 y:
+ln -s <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_1.iso&quot;</span> x::
+ln -s <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_2.iso&quot;</span> y::
+</pre></div>
+</div>
+<p>Finally, run the setup:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> x:
+<span class="nv">LANG</span><span class="o">=</span>ja_JP.utf8 wine setup.exe
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-2-2 docutils container">
+<p>Create <code class="docutils literal notranslate"><span class="pre">ISO</span></code> images of the disks and then
+proceed with the steps listed in the <code class="docutils literal notranslate"><span class="pre">ISO/MDF</span></code> tab.</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-RmVkb3Jh docutils container">
+<p>Choose the installation method that applies to you:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-3-0 docutils container">
+<div class="docutils container">
+<p>Folder/Zip</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-3-1 docutils container">
+<div class="docutils container">
+<p>ISO/MDF</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-3-2 docutils container">
+<div class="docutils container">
+<p>CD-ROM</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-3-0 active docutils container">
+<p>If you have the game in a zip file, extract it before proceeding.</p>
+<p>Assuming you have the game folder in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>, copy it to the wineprefix.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">&quot;</span>
+cp -r <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE ALBUM2&quot;</span> <span class="s2">&quot;drive_c/Program Files&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-3-1 docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">.mdf</span></code> files instead of <code class="docutils literal notranslate"><span class="pre">.iso</span></code>,
+rename them to <code class="docutils literal notranslate"><span class="pre">.iso</span></code> before proceeding.</p>
+</div>
+<p>Mount the game disks in <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> (assuming you have them in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p /tmp/disk<span class="o">{</span><span class="m">1</span>..2<span class="o">}</span>
+sudo mount <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_1.iso&quot;</span> /tmp/disk1
+sudo mount <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_2.iso&quot;</span> /tmp/disk2
+</pre></div>
+</div>
+<p>Then, mount them in the wineprefix:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> dosdevices
+ln -s /tmp/disk1 x:
+ln -s /tmp/disk2 y:
+ln -s <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_1.iso&quot;</span> x::
+ln -s <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_2.iso&quot;</span> y::
+</pre></div>
+</div>
+<p>Finally, run the setup:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> x:
+<span class="nv">LANG</span><span class="o">=</span>ja_JP.utf8 wine setup.exe
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-3-2 docutils container">
+<p>Create <code class="docutils literal notranslate"><span class="pre">ISO</span></code> images of the disks and then
+proceed with the steps listed in the <code class="docutils literal notranslate"><span class="pre">ISO/MDF</span></code> tab.</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWFjT1M= docutils container">
+<p>Choose the installation method that applies to you:</p>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-4-0 docutils container">
+<div class="docutils container">
+<p>Folder/Zip</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-4-1 docutils container">
+<div class="docutils container">
+<p>ISO/MDF</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-4-2 docutils container">
+<div class="docutils container">
+<p>CD-ROM</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-4-0 active docutils container">
+<p>If you have the game in a zip file, extract it before proceeding.</p>
+<p>Assuming you have the game folder in <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>, copy it to the wineprefix.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">&quot;</span>
+cp -r <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE ALBUM2&quot;</span> <span class="s2">&quot;drive_c/Program Files&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-4-1 docutils container">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have <code class="docutils literal notranslate"><span class="pre">.mdf</span></code> files instead of <code class="docutils literal notranslate"><span class="pre">.iso</span></code>,
+rename them to <code class="docutils literal notranslate"><span class="pre">.iso</span></code> before proceeding.</p>
+</div>
+<p>Mount the disks by double clicking them. Then, mount them
+in the wineprefix (assuming you have them in your home folder):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span class="s2">/dosdevices&quot;</span>
+ln -s /Volumes/WHITE_ALBUM2_1 x:
+ln -s /Volumes/WHITE_ALBUM2_2 y:
+ln -s <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_1.iso&quot;</span> x::
+ln -s <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/WHITE_ALBUM2_2.iso&quot;</span> y::
+</pre></div>
+</div>
+<p>Finally, run the setup:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /Volumes/WHITE_ALBUM2_1
+<span class="nv">LC_MESSAGES</span><span class="o">=</span>ja_JP.UTF-8 wine setup.exe
+</pre></div>
+</div>
+<p><em>Some glyphs may show up as squares.</em></p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-4-2 docutils container">
+<p>Create <code class="docutils literal notranslate"><span class="pre">ISO</span></code> images of the disks and then
+proceed with the steps listed in the <code class="docutils literal notranslate"><span class="pre">ISO/MDF</span></code> tab.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span id="document-install-patch"></span><div class="section" id="install-the-patch">
+<h2>Install the patch<a class="headerlink" href="#install-the-patch" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-VWJ1bnR1 docutils container">
+<div class="docutils container">
+<p>Ubuntu</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-QXJjaA== docutils container">
+<div class="docutils container">
+<p>Arch</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-RmVkb3Jh docutils container">
+<div class="docutils container">
+<p>Fedora</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-TWFjT1M= docutils container">
+<div class="docutils container">
+<p>MacOS</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-VWJ1bnR1 active docutils container">
+<p>Download and run the latest release of the installer:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.0/WA2_patch_DMM.exe
+wine WA2_patch_DMM.exe
+</pre></div>
+</div>
+<p>Make sure you pick the directory of the game as the destination location.</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-QXJjaA== docutils container">
+<p>Download and run the latest release of the installer:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.0/WA2_patch_DMM.exe
+wine WA2_patch_DMM.exe
+</pre></div>
+</div>
+<p>Make sure you pick the directory of the game as the destination location.</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-RmVkb3Jh docutils container">
+<p>Download and run the latest release of the installer:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.0/WA2_patch_DMM.exe
+wine WA2_patch_DMM.exe
+</pre></div>
+</div>
+<p>Make sure you pick the directory of the game as the destination location.</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWFjT1M= docutils container">
+<p>Download and run the latest release of the installer:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.0/WA2_patch_DMM.exe
+wine WA2_patch_DMM.exe
+</pre></div>
+</div>
+<p>Make sure you pick the directory of the game as the destination location.</p>
+</div>
+</div>
+</div>
+</div>
+<hr><div class="docutils container">
+<div class="line-block">
+<div class="line">You should now be able to launch the game with wine:</div>
+<div class="line">(assuming it’s installed in <code class="docutils literal notranslate"><span class="pre">$WINEPREFIX/drive_c/Program</span> <span class="pre">Files/WHITE</span> <span class="pre">ALBUM2</span></code>)</div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>wine <span class="s1">&#39;C:\Program Files\WHITE ALBUM2\WA2_en.exe&#39;</span>
+</pre></div>
+</div>
+<p>Do not forget to set <code class="docutils literal notranslate"><span class="pre">WINEPREFIX=&quot;$HOME/.local/share/wineprefixes/wa2&quot;</span></code>
+whenever you launch the game in the future.</p>
+<p>If you need help, check the <a class="reference external" href="https://github.com/TodokanaiTL/wa2-wine/issues">issues</a>
+and submit a new one if your issue doesn’t already exist.</p>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://appdb.winehq.org/objectManager.php?sClass=version&amp;iId=29024">Wine AppDB Entry</a></p></li>
+<li><p><a class="reference external" href="https://todokanaitl.github.io/">Todokanai TL Website</a></p></li>
+<li><p><a class="reference external" href="https://discord.gg/5rrxEUN">Todokanai TL Discord</a></p></li>
+<li><p><a class="reference external" href="https://github.com/TodokanaiTL/WA2EnglishPatch/issues">Patch Issue Tracker</a></p></li>
+</ul>
+</div>
+<div class="section" id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://forum.ubuntu.com.cn/viewtopic.php?p=3108761#p3108761">https://forum.ubuntu.com.cn/viewtopic.php?p=3108761#p3108761</a></p></li>
+<li><p><a class="reference external" href="https://ubuntuforums.org/showthread.php?t=383628">https://ubuntuforums.org/showthread.php?t=383628</a></p></li>
+<li><p><a class="reference external" href="https://forums.fedoraforum.org/showthread.php?315330-Install-Language-Packs">https://forums.fedoraforum.org/showthread.php?315330-Install-Language-Packs</a></p></li>
+<li><p><a class="reference external" href="https://wiki.winehq.org/MacOS_FAQ#How_can_I_switch_the_locale.3F">https://wiki.winehq.org/MacOS_FAQ#How_can_I_switch_the_locale.3F</a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="#">WA2 on wine</a> &#187;</li> 
+      </ul>
+    </div>
+  <div class="footer" role="contentinfo">
+    &copy; 2019-2020, TodokanaiTL, Unlicense |
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> v3.0.2 |
+    Fork me on <a href="https://github.com/TodokanaiTL/wa2-wine">GitHub</a>
+  </div>
+  </body>
+</html>

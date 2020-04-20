@@ -1,0 +1,9 @@
+* text=auto
+
+favicon.ico binary
+
+docs/* linguist-generated
+
+*.rst linguist-detectable=true
+
+layout.html linguist-language=HTML+Django
