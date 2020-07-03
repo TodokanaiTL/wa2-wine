@@ -6,6 +6,7 @@ Install & patch White Album 2 on wine
 
    japanese-support.rst
    install-wine.rst
+   install-gstreamer.rst
    setup-wineprefix.rst
    install-game.rst
    install-patch.rst

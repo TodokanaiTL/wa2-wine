@@ -19,7 +19,7 @@
 project = 'WA2 Wine'
 copyright = '2019-2020, TodokanaiTL'
 author = 'Observer of Time'
-release = '0.0.2'
+release = '0.0.3'
 
 # -- General configuration ---------------------------------------------------
 

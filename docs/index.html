@@ -5,6 +5,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WA2 on wine</title>
     <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -30,7 +31,7 @@
     <script src="_static/css3-mediaqueries.js"></script>
     <![endif]-->
   <style>.docutils.container { font-size: 1rem }</style>
-  <meta name="generator" content="Sphinx 3.0.2">
+  <meta name="generator" content="Sphinx 3.1.1">
   <meta name="description" content="Instructions for installing and patching White Album 2 on wine">
   <meta name="og:description" content="Instructions for installing and patching White Album 2 on wine">
   <meta name="twitter:description" content="Instructions for installing and patching White Album 2 on wine">
@@ -42,9 +43,10 @@
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">WA2 on wine</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">WA2 on wine</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">WA2 on wine</a></li> 
       </ul>
-    </div>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
@@ -234,6 +236,60 @@ chmod +x winetricks <span class="o">&amp;&amp;</span> sudo mv winetricks /usr/lo
 </div>
 </div>
 </div>
+<span id="document-install-gstreamer"></span><div class="section" id="install-32-bit-gstreamer">
+<h2>Install 32-bit GStreamer<a class="headerlink" href="#install-32-bit-gstreamer" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-VWJ1bnR1 docutils container">
+<div class="docutils container">
+<p>Ubuntu</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-QXJjaA== docutils container">
+<div class="docutils container">
+<p>Arch</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-RmVkb3Jh docutils container">
+<div class="docutils container">
+<p>Fedora</p>
+</div>
+</div>
+<div class="item sphinx-data-tab-TWFjT1M= docutils container">
+<div class="docutils container">
+<p>MacOS</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-VWJ1bnR1 active docutils container">
+<p>The videos require the good &amp; ugly 32-bit GStreamer plugins to work.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt install -y gstreamer1.0-plugins-<span class="o">{</span>good,ugly<span class="o">}</span>:i386
+</pre></div>
+</div>
+<p>You can also open the <code class="docutils literal notranslate"><span class="pre">*0.pak</span></code> files in your media player.</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-QXJjaA== docutils container">
+<p>The videos require the good &amp; ugly 32-bit GStreamer plugins to work.</p>
+<p>The ugly plugins are available in the <a class="reference external" href="https://wiki.archlinux.org/index.php/Unofficial_user_repositories#chaotic-aur">chaotic-aur</a> repository.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo pacman -S lib32-gst-plugins-<span class="o">{</span>good,ugly<span class="o">}</span>
+</pre></div>
+</div>
+<p>You can also open the <code class="docutils literal notranslate"><span class="pre">*0.pak</span></code> files in your media player.</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-RmVkb3Jh docutils container">
+<p>The videos require the good &amp; ugly 32-bit GStreamer plugins to work.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo dnf install -y gstreamer1-plugins-<span class="o">{</span>good,ugly<span class="o">}</span>.i686
+</pre></div>
+</div>
+<p>You can also open the <code class="docutils literal notranslate"><span class="pre">*0.pak</span></code> files in your media player.</p>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWFjT1M= docutils container">
+<p><a class="reference external" href="https://www.winehq.org/pipermail/wine-users/2011-January/084599.html">Supposedly</a>, you can install Quicktime instead of GStreamer.</p>
+<p>You can also open the <code class="docutils literal notranslate"><span class="pre">*0.pak</span></code> files in your media player.</p>
+<p>If you have more info, please submit a pull request.</p>
+</div>
+</div>
+</div>
 <span id="document-setup-wineprefix"></span><div class="section" id="create-a-wineprefix-for-the-game">
 <h2>Create a wineprefix for the game<a class="headerlink" href="#create-a-wineprefix-for-the-game" title="Permalink to this headline">¶</a></h2>
 <div class="sphinx-tabs docutils container">
@@ -268,8 +324,7 @@ mkdir -p <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span 
 </div>
 <p>Then, install the requirements:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>winetricks lucida corefonts cjkfonts <span class="c1"># English &amp; Japanese fonts</span>
-winetricks devenum d3dx9 quartz <span class="c1"># the DLLs required by the game</span>
-winetricks wmp9 <span class="c1"># includes the wmv codec used in the cutscenes</span>
+winetricks dxvk <span class="c1"># D3D9 to Vulkan translation layer</span>
 </pre></div>
 </div>
 </div>
@@ -282,8 +337,7 @@ mkdir -p <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span 
 </div>
 <p>Then, install the requirements:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>winetricks lucida corefonts cjkfonts <span class="c1"># English &amp; Japanese fonts</span>
-winetricks devenum d3dx9 quartz <span class="c1"># the DLLs required by the game</span>
-winetricks wmp9 <span class="c1"># includes the wmv codec used in the cutscenes</span>
+winetricks dxvk <span class="c1"># D3D9 to Vulkan translation layer</span>
 </pre></div>
 </div>
 </div>
@@ -296,8 +350,7 @@ mkdir -p <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span 
 </div>
 <p>Then, install the requirements:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>winetricks lucida corefonts cjkfonts <span class="c1"># English &amp; Japanese fonts</span>
-winetricks devenum d3dx9 quartz <span class="c1"># the DLLs required by the game</span>
-winetricks wmp9 <span class="c1"># includes the wmv codec used in the cutscenes</span>
+winetricks dxvk <span class="c1"># D3D9 to Vulkan translation layer</span>
 </pre></div>
 </div>
 </div>
@@ -313,8 +366,7 @@ mkdir -p <span class="s2">&quot;</span><span class="nv">$WINEPREFIX</span><span 
 </div>
 <p>Then, install the requirements:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>winetricks lucida corefonts cjkfonts <span class="c1"># English &amp; Japanese fonts</span>
-winetricks devenum d3dx9 quartz <span class="c1"># the DLLs required by the game</span>
-winetricks wmp9 <span class="c1"># includes the wmv codec used in the cutscenes</span>
+winetricks dxvk <span class="c1"># D3D9 to Vulkan translation layer</span>
 </pre></div>
 </div>
 </div>
@@ -610,7 +662,7 @@ proceed with the steps listed in the <code class="docutils literal notranslate">
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-VWJ1bnR1 active docutils container">
 <p>Download and run the latest release of the installer:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.0/WA2_patch_DMM.exe
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.2/WA2_patch_DMM.exe
 wine WA2_patch_DMM.exe
 </pre></div>
 </div>
@@ -618,7 +670,7 @@ wine WA2_patch_DMM.exe
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-QXJjaA== docutils container">
 <p>Download and run the latest release of the installer:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.0/WA2_patch_DMM.exe
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.2/WA2_patch_DMM.exe
 wine WA2_patch_DMM.exe
 </pre></div>
 </div>
@@ -626,7 +678,7 @@ wine WA2_patch_DMM.exe
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-RmVkb3Jh docutils container">
 <p>Download and run the latest release of the installer:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.0/WA2_patch_DMM.exe
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.2/WA2_patch_DMM.exe
 wine WA2_patch_DMM.exe
 </pre></div>
 </div>
@@ -634,7 +686,7 @@ wine WA2_patch_DMM.exe
 </div>
 <div class="ui bottom attached sphinx-tab tab segment sphinx-data-tab-TWFjT1M= docutils container">
 <p>Download and run the latest release of the installer:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.0/WA2_patch_DMM.exe
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>curl -JLO https://github.com/TodokanaiTL/WA2EnglishPatch/releases/download/v0.9.0.2/WA2_patch_DMM.exe
 wine WA2_patch_DMM.exe
 </pre></div>
 </div>
@@ -677,6 +729,7 @@ and submit a new one if your issue doesn’t already exist.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
       </div>
       <div class="clearer"></div>
@@ -684,12 +737,13 @@ and submit a new one if your issue doesn’t already exist.</p>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="#">WA2 on wine</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">WA2 on wine</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">WA2 on wine</a></li> 
       </ul>
     </div>
   <div class="footer" role="contentinfo">
     &copy; 2019-2020, TodokanaiTL, Unlicense |
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> v3.0.2 |
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> v3.1.1 |
     Fork me on <a href="https://github.com/TodokanaiTL/wa2-wine">GitHub</a>
   </div>
   </body>

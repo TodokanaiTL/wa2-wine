@@ -9,6 +9,5 @@ Then, install the requirements:
 .. sourcecode:: sh
 
    winetricks lucida corefonts cjkfonts # English & Japanese fonts
-   winetricks devenum d3dx9 quartz # the DLLs required by the game
-   winetricks wmp9 # includes the wmv codec used in the cutscenes
+   winetricks dxvk # D3D9 to Vulkan translation layer
 
