@@ -8,6 +8,6 @@ Then, install the requirements:
 
 .. sourcecode:: sh
 
-   winetricks lucida corefonts cjkfonts # English & Japanese fonts
+   winetricks corefonts lucida fakejapanese # English & Japanese fonts
    winetricks dxvk # D3D9 to Vulkan translation layer
 
