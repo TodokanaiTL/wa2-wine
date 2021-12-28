@@ -1,26 +1,18 @@
 Install the patch
 ^^^^^^^^^^^^^^^^^
 
-.. tabs::
+.. tab:: Ubuntu
 
-   .. group-tab:: Ubuntu
+   .. include:: _include/patch.rst
 
-      .. include:: _include/patch.rst
+.. tab:: Arch
 
-   .. ::
+   .. include:: _include/patch.rst
 
-   .. group-tab:: Arch
+.. tab:: Fedora
 
-      .. include:: _include/patch.rst
+   .. include:: _include/patch.rst
 
-   .. ::
+.. tab:: MacOS
 
-   .. group-tab:: Fedora
-
-      .. include:: _include/patch.rst
-
-   .. ::
-
-   .. group-tab:: MacOS
-
-      .. include:: _include/patch.rst
+   .. include:: _include/patch.rst

@@ -1,35 +1,27 @@
 Create a wineprefix for the game
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. tabs::
+.. tab:: Ubuntu
 
-   .. group-tab:: Ubuntu
+   Run the following commands to create a wineprefix:
 
-      Run the following commands to create a wineprefix:
+   .. include:: _include/wineprefix.rst
 
-      .. include:: _include/wineprefix.rst
+.. tab:: Arch
 
-   .. ::
+   Run the following commands to create a wineprefix:
 
-   .. group-tab:: Arch
+   .. include:: _include/wineprefix.rst
 
-      Run the following commands to create a wineprefix:
+.. tab:: Fedora
 
-      .. include:: _include/wineprefix.rst
+   Run the following commands to create a wineprefix:
 
-   .. ::
+   .. include:: _include/wineprefix.rst
 
-   .. group-tab:: Fedora
+.. tab:: MacOS
 
-      Run the following commands to create a wineprefix:
+   | Run the ``wine`` application, which will launch a terminal window.
+   | There, type the following commands to create the wineprefix:
 
-      .. include:: _include/wineprefix.rst
-
-   .. ::
-
-   .. group-tab:: MacOS
-
-      | Run the ``wine`` application, which will launch a terminal window.
-      | There, type the following commands to create the wineprefix:
-
-      .. include:: _include/wineprefix.rst
+   .. include:: _include/wineprefix.rst

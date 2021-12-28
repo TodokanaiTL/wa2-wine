@@ -10,7 +10,7 @@ Then, mount them in the wineprefix:
 
 .. sourcecode:: sh
 
-   cd dosdevices
+   cd "$WINEPREFIX/dosdevices"
    ln -s /tmp/disk1 x:
    ln -s /tmp/disk2 y:
    ln -s "$HOME/WHITE_ALBUM2_1.iso" x::

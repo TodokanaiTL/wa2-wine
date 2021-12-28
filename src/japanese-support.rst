@@ -1,50 +1,48 @@
 Enable Japanese support
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. tabs::
+.. tab:: Ubuntu
 
-   .. group-tab:: Ubuntu
+   .. include:: _include/locale.rst
+      :end-before: MacOS
 
-      .. include:: _include/locale.rst
-         :end-before: MacOS
+   If not, generate the locale and install some fonts:
 
-      If not, generate the locale and install some fonts:
+   .. sourcecode:: sh
 
-      .. sourcecode:: sh
+      sudo locale-gen ja_JP.{UTF-8,EUC-JP}
+      sudo apt install -y fonts-{takao,mona,monapo}
 
-         sudo locale-gen ja_JP.{UTF-8,EUC-JP}
-         sudo apt install -y fonts-{takao,mona,monapo}
+.. tab:: Arch
 
-   .. group-tab:: Arch
+   .. include:: _include/locale.rst
+      :end-before: MacOS
 
-      .. include:: _include/locale.rst
-         :end-before: MacOS
+   If not, generate the locale and install some fonts:
 
-      If not, generate the locale and install some fonts:
+   .. sourcecode:: sh
 
-      .. sourcecode:: sh
+      sudo locale-gen ja_JP.{UTF-8,EUC-JP}
+      sudo pacman -S otf-ipafont ttf-hanazono
 
-         sudo locale-gen ja_JP.{UTF-8,EUC-JP}
-         sudo pacman -S otf-ipafont ttf-hanazono
+.. tab:: Fedora
 
-   .. group-tab:: Fedora
+   .. include:: _include/locale.rst
+      :end-before: MacOS
 
-      .. include:: _include/locale.rst
-         :end-before: MacOS
+   If not, install the locale and fonts:
 
-      If not, install the locale and fonts:
+   .. sourcecode:: sh
 
-      .. sourcecode:: sh
+      sudo dnf groupinstall -y 'Japanese Support'
+      sudo dnf install -y hanazono-fonts mona-*-fonts
 
-         sudo dnf groupinstall -y 'Japanese Support'
-         sudo dnf install -y hanazono-fonts mona-*-fonts
+.. tab:: MacOS
 
-   .. group-tab:: MacOS
+   .. include:: _include/locale.rst
+      :start-after: MacOS
 
-      .. include:: _include/locale.rst
-         :start-after: MacOS
-
-      | Japanese fonts should also be preinstalled but,
-         alas, they don't seem to work 100% in wine.
-      | You could, however, install more fonts in
-         hopes of getting one to work properly.
+   | Japanese fonts should also be preinstalled but,
+      alas, they don't seem to work 100% in wine.
+   | You could, however, install more fonts in
+      hopes of getting one to work properly.

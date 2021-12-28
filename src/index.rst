@@ -5,15 +5,28 @@ Install & patch White Album 2 on wine
    :maxdepth: 1
 
    japanese-support.rst
-   install-wine.rst
    install-gstreamer.rst
-   setup-wineprefix.rst
-   install-game.rst
-   install-patch.rst
 
 .. raw:: html
 
    <hr>
+
+.. container::
+
+   .. note::
+      A Lutris installer is in the works.
+      Until it's done, follow the steps below.
+
+.. toctree::
+   :maxdepth: 1
+
+   install-wine.rst
+   setup-wineprefix.rst
+   install-game.rst
+   install-patch.rst
+
+Run the game
+^^^^^^^^^^^^
 
 .. container::
 
@@ -22,7 +35,7 @@ Install & patch White Album 2 on wine
 
    .. sourcecode:: sh
 
-      wine 'C:\Program Files\WHITE ALBUM2\WA2_en.exe'
+      wine 'C:\Program Files\WHITE ALBUM2\WA2.exe'
 
    Do not forget to set ``WINEPREFIX="$HOME/.local/share/wineprefixes/wa2"``
    whenever you launch the game in the future.

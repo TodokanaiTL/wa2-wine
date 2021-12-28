@@ -1,110 +1,79 @@
 Install the game
 ^^^^^^^^^^^^^^^^
 
-.. tabs::
+.. tab:: Ubuntu
 
-   .. group-tab:: Ubuntu
+   Choose the installation method that applies to you:
 
-      Choose the installation method that applies to you:
+   .. tab:: Folder/Zip
 
-      .. tabs::
+      .. include:: _include/folder-zip.rst
 
-         .. tab:: Folder/Zip
+   .. tab:: ISO/MDF
 
-            .. include:: _include/folder-zip.rst
+      .. include:: _include/iso-mdf.rst
+         :end-before: MacOS
 
-         .. tab:: ISO/MDF
+   .. tab:: CD-ROM
 
-            .. note::
+      Create ``ISO`` images of the disks and then
+      proceed with the steps listed in the ``ISO/MDF`` tab.
 
-               If you have ``.mdf`` files instead of ``.iso``,
-               rename them to ``.iso`` before proceeding.
+.. tab:: Arch
 
-            .. include:: _include/iso-mdf.rst
-               :end-before: MacOS
+   Choose the installation method that applies to you:
 
-         .. tab:: CD-ROM
+   .. tab:: Folder/Zip
 
-            Create ``ISO`` images of the disks and then
-            proceed with the steps listed in the ``ISO/MDF`` tab.
+      .. include:: _include/folder-zip.rst
 
-   .. ::
+   .. tab:: ISO/MDF
 
-   .. group-tab:: Arch
+      .. include:: _include/iso-mdf.rst
+         :end-before: MacOS
 
-      Choose the installation method that applies to you:
+   .. tab:: CD-ROM
 
-      .. tabs::
+      Create ``ISO`` images of the disks and then
+      proceed with the steps listed in the ``ISO/MDF`` tab.
 
-         .. tab:: Folder/Zip
+.. tab:: Fedora
 
-            .. include:: _include/folder-zip.rst
+   Choose the installation method that applies to you:
 
-         .. tab:: ISO/MDF
+   .. tab:: Folder/Zip
 
-            .. note::
+      .. include:: _include/folder-zip.rst
 
-               If you have ``.mdf`` files instead of ``.iso``,
-               rename them to ``.iso`` before proceeding.
+   .. tab:: ISO/MDF
 
-            .. include:: _include/iso-mdf.rst
-               :end-before: MacOS
+      .. include:: _include/iso-mdf.rst
+         :end-before: MacOS
 
-         .. tab:: CD-ROM
+   .. tab:: CD-ROM
 
-            Create ``ISO`` images of the disks and then
-            proceed with the steps listed in the ``ISO/MDF`` tab.
+      Create ``ISO`` images of the disks and then
+      proceed with the steps listed in the ``ISO/MDF`` tab.
 
-   .. ::
+.. tab:: MacOS
 
-   .. group-tab:: Fedora
+   Choose the installation method that applies to you:
 
-      Choose the installation method that applies to you:
+   .. tab:: Folder/Zip
 
-      .. tabs::
+      .. include:: _include/folder-zip.rst
 
-         .. tab:: Folder/Zip
+   .. tab:: ISO/MDF
 
-            .. include:: _include/folder-zip.rst
+      .. tip::
 
-         .. tab:: ISO/MDF
+         If you have ``.mdf`` files instead of ``.iso``,
+         rename them to ``.iso`` before proceeding.
 
-            .. note::
+      .. include:: _include/iso-mdf.rst
+         :start-after: MacOS
 
-               If you have ``.mdf`` files instead of ``.iso``,
-               rename them to ``.iso`` before proceeding.
+   .. tab:: CD-ROM
 
-            .. include:: _include/iso-mdf.rst
-               :end-before: MacOS
-
-         .. tab:: CD-ROM
-
-            Create ``ISO`` images of the disks and then
-            proceed with the steps listed in the ``ISO/MDF`` tab.
-
-   .. ::
-
-   .. group-tab:: MacOS
-
-      Choose the installation method that applies to you:
-
-      .. tabs::
-
-         .. tab:: Folder/Zip
-
-            .. include:: _include/folder-zip.rst
-
-         .. tab:: ISO/MDF
-
-            .. note::
-
-               If you have ``.mdf`` files instead of ``.iso``,
-               rename them to ``.iso`` before proceeding.
-
-            .. include:: _include/iso-mdf.rst
-               :start-after: MacOS
-
-         .. tab:: CD-ROM
-
-            Create ``ISO`` images of the disks and then
-            proceed with the steps listed in the ``ISO/MDF`` tab.
+      Create ``ISO`` images of the disks and then
+      proceed with the steps listed in the ``ISO/MDF`` tab.

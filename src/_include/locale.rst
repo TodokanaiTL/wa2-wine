@@ -4,7 +4,8 @@ Check whether it's already enabled:
 
    locale -a | grep ja
 
-If you see something like this, you can proceed to the next step.
+If you see something like this, you can proceed
+to the `next step <#install-32-bit-gstreamer>`_.
 
 .. sourcecode:: sh
 

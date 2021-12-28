@@ -1,9 +1,9 @@
-{%- extends '!layout.html' %}
+{%- extends '!page.html' %}
 
-{%- block extrahead %}
+{%- block linktags %}{%- endblock -%}
+
+{%- block site_meta %}
   {{ super() }}
-  <style>.docutils.container { font-size: 1rem }</style>
-  <meta name="generator" content="Sphinx {{ sphinx_version }}">
   {%- set desc="Instructions for installing and patching White Album 2 on wine" %}
   <meta name="description" content="{{ desc }}">
   <meta name="og:description" content="{{ desc }}">
@@ -15,12 +15,23 @@
   <meta name="twitter:title" content="{{ title }}">
 {%- endblock %}
 
+{%- block extra_styles -%}
+  <style>
+    .toc-drawer, .toc-overlay-icon { display: none }
+    .sidebar-drawer, .nav-overlay-icon { display: none }
+    .tab-content > :first-child { margin-top: 1em }
+    @media screen and (min-width: 67em) {
+      .content { width: 75vw; margin: auto }
+    }
+  </style>
+{%- endblock -%}
+
 {%- block footer %}
-  <div class="footer" role="contentinfo">
+  <div class="footer related-information" role="contentinfo">
     &copy; {{ copyright }}, Unlicense |
     Created using <a href="https://sphinx-doc.org/">Sphinx</a> v{{ sphinx_version }} |
     Fork me on <a href="https://github.com/TodokanaiTL/wa2-wine">GitHub</a>
   </div>
 {%- endblock %}
 
-{# vim:set ft=jinja: #}
+{# vim:set ft=html.jinja2: #}

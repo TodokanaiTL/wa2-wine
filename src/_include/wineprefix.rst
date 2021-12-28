@@ -1,13 +1,12 @@
 .. sourcecode:: sh
 
-   export WINEARCH=win32
-   export WINEPREFIX="$HOME/.local/share/wineprefixes/wa2"
-   mkdir -p "$WINEPREFIX" && wineboot -u
+   mkdir -p "$HOME/.local/share/wineprefixes/wa2"
+   export WINEARCH=win32 WINEPREFIX="$_" && wineboot
 
 Then, install the requirements:
 
 .. sourcecode:: sh
 
-   winetricks corefonts lucida fakejapanese # English & Japanese fonts
-   winetricks dxvk # D3D9 to Vulkan translation layer
+   winetricks fakejapanese_ipamona # Japanese fonts
+   winetricks dxvk # DLL overrides required for subs
 
