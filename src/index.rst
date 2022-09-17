@@ -1,6 +1,14 @@
 Install & patch White Album 2 on wine
 -------------------------------------
 
+.. container::
+
+   .. note::
+
+      Instructions for Lutris users are available here__.
+
+      .. __: https://github.com/umimaso/wa2-lutris
+
 .. toctree::
    :maxdepth: 1
 
@@ -10,12 +18,6 @@ Install & patch White Album 2 on wine
 .. raw:: html
 
    <hr>
-
-.. container::
-
-   .. note::
-      A Lutris installer is in the works.
-      Until it's done, follow the steps below.
 
 .. toctree::
    :maxdepth: 1
