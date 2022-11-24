@@ -20,7 +20,7 @@ Install wine and winetricks
       The game may crash on Wine 7.0 or newer.
       It's recommended to use an older version.
 
-   Install ``wine`` following the `instructions on the Arch wiki <https://wiki.archlinux.org/index.php/Wine#Installation>`_.
+   Install ``wine`` following the `instructions on the Arch wiki <https://wiki.archlinux.org/index.php/Wine#Installation>`_. Also, install ``lib32-gnutls`` and ``gnutls``.
 
    Get the latest version of ``winetricks``:
 
